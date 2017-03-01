@@ -16,7 +16,7 @@ allprojects {
 
 ```
 dependencies {
-     compile 'com.github.MarnonDev:EasyStatusView:v1.0.0'
+     compile 'com.github.MarnonDev:EasyStatusView:v1.0.3'
 }
 ```
 
@@ -52,6 +52,7 @@ dependencies {
 >|getErrorView()|获取错误布局|
 >|getLoadingView()|获取加载中布局|
 >|getNoNetworkView()|获取无网络布局|
+>|getCurrentStatus()|获取当前显示状态|
 
 **3.3 示例代码**
 
