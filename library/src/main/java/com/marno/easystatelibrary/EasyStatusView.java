@@ -27,6 +27,8 @@ public class EasyStatusView extends RelativeLayout {
             STATUS_ERROR = 4,
             STATUS_NO_NET = 5;
 
+    private int mCurrentStatus;//当前状态
+
     public static final int DEFAULT_LAYOUT = R.layout.esv_layout_default;
 
     private View
@@ -157,6 +159,7 @@ public class EasyStatusView extends RelativeLayout {
      * 显示内容
      */
     public void content() {
+        mCurrentStatus = STATUS_CONTENT;
         changeViewStatus(STATUS_CONTENT);
     }
 
@@ -164,6 +167,7 @@ public class EasyStatusView extends RelativeLayout {
      * 显示加载中
      */
     public void loading() {
+        mCurrentStatus = STATUS_LOADING;
         changeViewStatus(STATUS_LOADING);
     }
 
@@ -171,6 +175,7 @@ public class EasyStatusView extends RelativeLayout {
      * 显示错误
      */
     public void error() {
+        mCurrentStatus = STATUS_ERROR;
         changeViewStatus(STATUS_ERROR);
     }
 
@@ -178,6 +183,7 @@ public class EasyStatusView extends RelativeLayout {
      * 显示没有网络
      */
     public void noNet() {
+        mCurrentStatus = STATUS_NO_NET;
         changeViewStatus(STATUS_NO_NET);
     }
 
@@ -185,6 +191,7 @@ public class EasyStatusView extends RelativeLayout {
      * 显示空视图
      */
     public void empty() {
+        mCurrentStatus = STATUS_EMPTY;
         changeViewStatus(STATUS_EMPTY);
     }
 
@@ -306,5 +313,16 @@ public class EasyStatusView extends RelativeLayout {
      */
     public View getNoNetworkView() {
         return mNoNetworkView;
+    }
+
+    /**
+     * 获取当前视图状态
+     *
+     * @return int
+     */
+    public int getCurrentStatus() {
+        if (mCurrentStatus == 0)
+            throw new RuntimeException("If you want to get current status,you may set status first");
+        return mCurrentStatus;
     }
 }
