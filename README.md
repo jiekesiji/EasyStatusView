@@ -1,6 +1,6 @@
-#RapidLibs
+# RapidLibs
 --------------------------
-####一、简介：
+#### 一、简介：
 一个多状态视图切换的控件，继承自RelativeLayout可以直接作为最外层布局使用，支持在布局中或代码中指定不同状态下的布局
 
 **1.1 Gradle集成**
@@ -20,10 +20,10 @@ dependencies {
 }
 ```
 
-####二、截图预览
+#### 二、截图预览
 ![](https://github.com/MarnonDev/EasyStatusView/blob/master/screenshot/EasyStatusView.gif)
 
-####三、使用方法
+#### 三、使用方法
 **3.1 属性列表**
 >|属性名称|说明|
 >|:---:|:---:|
@@ -124,7 +124,7 @@ mEsvLayout.noNet();//显示无网络视图
 mEsvLayout.content();//显示内容
 ```
 
-####四、关于我 Marno
+#### 四、关于我 Marno
 
 - 邮箱：marnodev@163.com
 - 简书：[点击关注Marno的简书](http://www.jianshu.com/users/174a09ba6c25)
