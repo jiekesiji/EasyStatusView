@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Marno on 2016/10/10/13:26.
@@ -20,7 +21,7 @@ import java.util.Map;
  */
 public class EasyStatusView extends RelativeLayout {
 
-    private static final int
+    public static final int
             STATUS_CONTENT = 1,
             STATUS_LOADING = 2,
             STATUS_EMPTY = 3,
@@ -325,4 +326,30 @@ public class EasyStatusView extends RelativeLayout {
             throw new RuntimeException("If you want to get current status,you may set status first");
         return mCurrentStatus;
     }
+
+    /**
+     * 对视图进行统一设置点击事件
+     *
+     * @param listener
+     */
+    public void setCommonClickListener(View.OnClickListener listener) {
+        if (mStatusViews == null) {
+            throw new RuntimeException("If you want to get current status,you may set status first");
+        }
+
+        if (listener == null) return;
+
+        Set<Map.Entry<Integer, View>> entries = mStatusViews.entrySet();
+
+        for (Map.Entry<Integer, View> entry : entries) {
+            if (entry.getKey() >= STATUS_EMPTY) {//正常情况下  我们对一个界面的中不同状态的view点击都是继续请求数据
+                entry.getValue().setOnClickListener(listener);
+            }
+        }
+    }
+
+
+
+
+
 }
