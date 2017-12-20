@@ -349,7 +349,4 @@ public class EasyStatusView extends RelativeLayout {
     }
 
 
-
-
-
 }
